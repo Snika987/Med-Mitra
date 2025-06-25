@@ -1,0 +1,26 @@
+# --- FastAPI Web Framework ---
+fastapi
+uvicorn
+
+# --- Database (PostgreSQL + SQLAlchemy ORM) ---
+sqlalchemy
+psycopg2-binary
+
+# --- File Handling / Uploads ---
+python-multipart
+
+# --- Data Parsing / Image Handling ---
+pandas
+Pillow
+
+# --- AI / LLMs (Open-Source) ---
+langchain
+langchian-community
+transformers
+torch
+
+# --- HuggingFace integration ---
+huggingface-hub
+
+# --- Optional: Load from .env file securely ---
+python-dotenv

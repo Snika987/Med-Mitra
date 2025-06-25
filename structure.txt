@@ -1,0 +1,19 @@
+med-assistant/
+├── backend/
+│   ├── main.py             # FastAPI entrypoint
+│   ├── models.py           # Pydantic models
+│   ├── db.py               # SQLite DB setup (SQLAlchemy)
+│   ├── ai/
+│   │   ├── prompt_engine.py # Construct LLM prompt
+│   │   ├── lab_parser.py    # CSV -> structured data
+│   │   └── image_caption.py # BLIP-2 caption
+│   ├── utils/
+│   │   └── file_handler.py  # Save files, generate IDs
+│   └── data/
+│       ├── labs/
+│       └── images/
+├── frontend/
+│   └── (optional React or simple HTML UI)
+├── Dockerfile
+├── requirements.txt
+├── README.md
