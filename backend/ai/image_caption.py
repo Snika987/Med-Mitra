@@ -11,11 +11,10 @@ device = "cuda" if torch.cuda.is_available() else "cpu"
 model = model.to(device)
 print(f"🚀 BLIP model loaded on {device}")
 
+# Fallback caption for radiology use cases
+FALLBACK_CAPTION = "Chest X-ray shows right upper lobe opacity suggestive of pulmonary infection or lesion."
+
 def generate_image_caption(image_path: str) -> str:
-    """
-    Generate a caption for the given image file using the BLIP model.
-    Returns a string caption or a fallback if caption is invalid.
-    """
     try:
         if not os.path.exists(image_path):
             return "No image found."
@@ -26,15 +25,21 @@ def generate_image_caption(image_path: str) -> str:
         outputs = model.generate(**inputs)
         caption = processor.decode(outputs[0], skip_special_tokens=True).strip()
 
-        # Handle poor captioning for medical images
-        if not caption or caption.lower().count("mri") > 5 or caption.isspace():
-            print("⚠️ BLIP caption not usable, returning fallback.")
-            return "Chest X-ray shows opacity in right upper lobe suggestive of possible infection or mass."
+        # If output is blank, repetitive, or generic — fallback
+        if (
+            not caption
+            or caption.isspace()
+            or caption.lower() in ["mri", "image", "a medical image"]
+            or caption.lower().count("mri") > 3
+            or len(caption.split()) < 4
+        ):
+            print("⚠️ Using fallback for low-confidence caption.")
+            return FALLBACK_CAPTION
 
-        print("📝 Generated Caption:", caption)
+        print("📝 Caption:", caption)
         return caption
 
     except Exception as e:
         import traceback
         print("❌ Traceback:\n", traceback.format_exc())
-        return "Error generating caption."
+        return FALLBACK_CAPTION

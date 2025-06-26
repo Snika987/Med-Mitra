@@ -1,0 +1,8 @@
+Test Name,Value,Unit,Reference Range,Note
+Hemoglobin,10.5,g/dL,12-16,Low
+WBC,13.2,x10^3/uL,4-11,High
+Platelets,430000,,150000-400000,Slightly High
+LDH,320,U/L,100-190,↑
+Alkaline Phosphatase,220,U/L,40-130,↑
+CEA,12.6,ng/mL,<5,Elevated
+CRP,20,mg/L,<3,Elevated
