@@ -61,10 +61,6 @@ Doctors can:
 
 Set both keys in your `.env` file:
 
-```env
-GROQ_API_KEY=your-groq-key
-DEEPGRAM_API_KEY=your-deepgram-key
-
 
 ## 📉 Limitations & Challenges
 
