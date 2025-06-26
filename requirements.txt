@@ -1,26 +1,26 @@
-# --- FastAPI Web Framework ---
-fastapi
-uvicorn
-
-# --- Database (PostgreSQL + SQLAlchemy ORM) ---
-sqlalchemy
-psycopg2-binary
-
-# --- File Handling / Uploads ---
-python-multipart
-
-# --- Data Parsing / Image Handling ---
-pandas
-Pillow
-
-# --- AI / LLMs (Open-Source) ---
-langchain
-langchian-community
-transformers
-torch
-
-# --- HuggingFace integration ---
-huggingface-hub
-
-# --- Optional: Load from .env file securely ---
-python-dotenv
+```plaintext
+fastapi==0.115.2
+uvicorn==0.32.0
+pydantic==2.9.2
+python-multipart==0.0.12
+sqlalchemy==2.0.35
+psycopg2-binary==2.9.9
+pillow==10.4.0
+numpy==2.1.2
+python-jose[cryptography]==3.3.0
+passlib[bcrypt]==1.7.4
+reportlab==4.2.5
+aiofiles==24.1.0
+streamlit==1.39.0
+pandas==2.2.3
+deepgram-sdk==3.7.2
+transformers==4.44.2
+torch==2.4.1
+python-dotenv==1.0.1
+regex==2024.9.11
+langchain-mistralai==0.2.4
+requests==2.32.3
+groq==0.11.0
+sounddevice==0.5.0
+scipy==1.14.1
+```
