@@ -5,9 +5,9 @@ from langchain_mistralai import ChatMistralAI
 from langchain_core.prompts import ChatPromptTemplate
 from dotenv import load_dotenv
 
-load_dotenv()  # Loads your MISTRAL_API_KEY from .env
+load_dotenv()  
 
-# Initialize Mistral LLM
+
 llm = ChatMistralAI(
     model="open-mistral-7b",
     temperature=0.3,

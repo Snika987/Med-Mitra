@@ -9,14 +9,14 @@ class PatientCase(Base):
     patient_name = Column(String)
     summary = Column(Text)
 
-    lab_path = Column(JSON, nullable=True)       # Path stored as JSON (or string if needed)
+    lab_path = Column(JSON, nullable=True)       
     image_path = Column(String, nullable=True)
 
-    soap = Column(JSON, nullable=True)           # Subjective, Objective, Assessment, Plan
+    soap = Column(JSON, nullable=True)           
     diagnoses = Column(JSON, nullable=True)
     treatment = Column(JSON, nullable=True)
     interpretations = Column(JSON, nullable=True)
 
     confidence = Column(Float, nullable=True)
 
-    lab_data = Column(JSON, nullable=True)       # Changed from Text → JSON for better support
+    lab_data = Column(JSON, nullable=True)       
